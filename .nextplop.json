@@ -1,0 +1,5 @@
+{
+  "typescript": true,
+  "srcDirectory": false,
+  "fileCasing": "kebabCase"
+}

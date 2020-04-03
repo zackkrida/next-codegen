@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "sourceMap": false,
+    "target": "es6",
+    "checkJs": true,
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "strictNullChecks": false,
+    "declaration": true,
+    "removeComments": false
+  },
+  "files": ["src/plopfile.js"],
+  "exclude": ["__tests__", "node_modules", "types"]
+}

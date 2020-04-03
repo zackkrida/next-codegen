@@ -1,0 +1,11 @@
+import { NextApiRequest, NextApiResponse } from 'next'
+
+const {{pascalCase name}} = (req: NextApiRequest, res: NextApiResponse<{{pascalCase name }}Data>) => {
+  res.status(200).json({ name: '{{pascalCase name}}' })
+}
+
+type {{pascalCase name }}Data = {
+  name: string
+}
+
+export default {{pascalCase name}}

@@ -1,0 +1,21 @@
+{
+  "name": "next-plop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "zackkrida",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "plop": "^2.6.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2
+  }
+}
