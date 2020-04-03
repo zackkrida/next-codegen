@@ -1,7 +1,7 @@
 {
   "name": "next-plop",
   "bin": "./src/cli.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "author": "zackkrida",
   "license": "MIT",
