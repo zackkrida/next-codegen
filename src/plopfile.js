@@ -3,7 +3,7 @@ const {
   typescript = false,
   srcDirectory = false,
   fileCasing = "pascalCase",
-} = require("./.nextplop.json")
+} = require("../.nextplop.json")
 
 /**
  * This is the list of our plop generators
@@ -22,7 +22,7 @@ const extension = (jsx = false) =>
  * @param {*} name
  */
 const getPlopTemplate = (name = "", jsx = false) => {
-  return `templates/${name}.${extension(jsx)}.hbs`
+  return `src/templates/${name}.${extension(jsx)}.hbs`
 }
 
 /**

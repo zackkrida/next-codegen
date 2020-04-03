@@ -1,6 +1,7 @@
 {
   "name": "next-plop",
-  "version": "1.0.0",
+  "bin": "./src/cli.js",
+  "version": "0.1.0",
   "main": "index.js",
   "author": "zackkrida",
   "license": "MIT",
@@ -13,6 +14,9 @@
     "next": "^9.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "test:plop": "plop --dest example"
   },
   "prettier": {
     "semi": false,
