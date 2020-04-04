@@ -10,7 +10,7 @@ const go = async () => {
     })
     const config = JSON.parse(configData)
 
-    console.info("next-gen is using the following settings:")
+    console.info("next-codegen is using the following settings:")
     console.info(config)
   } catch (error) {
     console.error("Unable to read your .nextplop.json file. So sad!")

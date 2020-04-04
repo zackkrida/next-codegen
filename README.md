@@ -1,4 +1,4 @@
-# next-gen
+# next-codegen
 
 > This is in **active development** and does not work yet.
 
@@ -8,18 +8,18 @@ Configurable code generation for [next.js](https://nextjs.org).
 
 ```shell
 # With npx (easiest, no installation required)
-npx next-gen
+npx next-codegen
 
 # or, installed globally
-npm i -g next-gen # yarn add -g next-gen
+npm i -g next-codegen # yarn add -g next-codegen
 
-# or, installed locally (alias with a package.json script "next-gen" : "next-gen")
-npm --save-dev next-gen # yarn add -D next-gen
+# or, installed locally (alias with a package.json script "next-codegen" : "next-codegen")
+npm --save-dev next-codegen # yarn add -D next-codegen
 ```
 
 ## Getting Started
 
-The first time you run `next-gen` you will be prompted to configure your application. This configuration will generate a local `.nextplop.json` file which holds all the settings. You may edit this file yourself anytime! Be sure to check it into your project if you want others to share your settings, or add it to your `.gitignore` if you only want to use `next-gen` locally.
+The first time you run `next-codegen` you will be prompted to configure your application. This configuration will generate a local `.nextplop.json` file which holds all the settings. You may edit this file yourself anytime! Be sure to check it into your project if you want others to share your settings, or add it to your `.gitignore` if you only want to use `next-codegen` locally.
 
 ## Supported Settings
 
