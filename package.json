@@ -1,6 +1,6 @@
 {
   "name": "next-codegen",
-  "version": "1.0.0-1",
+  "version": "1.0.0-2",
   "bin": "./src/cli.js",
   "main": "./src/cli.js",
   "author": "zackkrida",
