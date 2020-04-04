@@ -3,7 +3,7 @@ const {
   typescript = false,
   srcDirectory = false,
   fileCasing = "pascalCase",
-} = require("../.nextplop.json")
+} = require("../.next-codegen.json")
 
 /**
  * This is the list of our plop generators

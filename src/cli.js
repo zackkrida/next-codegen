@@ -5,7 +5,7 @@ const {
 
 const go = async () => {
   try {
-    const configData = await readFile(process.cwd() + "/.nextplop.json", {
+    const configData = await readFile(process.cwd() + "/.next-codegen.json", {
       encoding: "utf-8",
     })
     const config = JSON.parse(configData)
@@ -13,7 +13,7 @@ const go = async () => {
     console.info("next-codegen is using the following settings:")
     console.info(config)
   } catch (error) {
-    console.error("Unable to read your .nextplop.json file. So sad!")
+    console.error("Unable to read your .next-codegen.json file. So sad!")
   }
 }
 
