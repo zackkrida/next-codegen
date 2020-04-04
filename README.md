@@ -11,7 +11,7 @@ Configurable code generation for [next.js](https://nextjs.org). Quickly create p
 It is reccommended to use `npx` and avoid installing entirely. This ensures you're always using the latest version.
 
 ```shell
-npx next-codegen
+npx next-codegen # next-codegen@next for the latest prerelease version
 ```
 
 If you insist on installing, maybe do so locally instead of globally:
