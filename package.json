@@ -1,5 +1,5 @@
 {
-  "name": "next-plop",
+  "name": "next-gen",
   "bin": "./src/cli.js",
   "version": "0.4.0",
   "main": "index.js",

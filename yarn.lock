@@ -3987,9 +3987,9 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-plop@~0.25.0:
+node-gen@~0.25.0:
   version "0.25.0"
-  resolved "https://registry.yarnpkg.com/node-plop/-/node-plop-0.25.0.tgz#1d3bdf286bf74baabb6755b4cef8c6ab37110180"
+  resolved "https://registry.yarnpkg.com/node-gen/-/node-gen-0.25.0.tgz#1d3bdf286bf74baabb6755b4cef8c6ab37110180"
   integrity sha512-OFvnTsDw9nxNdLrYcveJhU2Hnzg+AxOz6xBk8uXsi0vCOSP7Rng98pdgfsuZKyCN+qrc+/fSwlNC5hkXhJ6gww==
   dependencies:
     "@types/globby" "^9.1.0"
@@ -4442,7 +4442,7 @@ plop@^2.6.0:
     interpret "^1.2.0"
     liftoff "^2.5.0"
     minimist "^1.2.0"
-    node-plop "~0.25.0"
+    node-gen "~0.25.0"
     ora "^3.4.0"
     v8flags "^2.0.10"
 
