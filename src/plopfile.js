@@ -1,9 +1,25 @@
-// Read our config
+// Try to read our config
+const { readFileSync } = require("fs")
+
+let config = {}
+
+try {
+  const configString = readFileSync(process.cwd() + "/next-codegen.json", {
+    encoding: "utf-8",
+  })
+  config = JSON.parse(configString)
+} catch (error) {
+  console.warn(
+    "No local config file (next-codegen.json) found. Run `next-codegen init` to create one!"
+  )
+  process.exit()
+}
+
 const {
   typescript = false,
   srcDirectory = false,
   fileCasing = "pascalCase",
-} = require("../.next-codegen.json")
+} = config
 
 /**
  * This is the list of our plop generators
@@ -15,14 +31,14 @@ module.exports = (/** @type import("plop").NodePlopAPI */ plop) => {
 
 // Get extension based on user typescript setting
 const extension = (jsx = false) =>
-  `${typescript ? "ts" : "js"}${jsx ? "x" : ""}`
+  `${typescript ? "ts" : "js"}${typescript && jsx ? "x" : ""}`
 
 /**
  * Helper function to get js/ts templates
  * @param {*} name
  */
 const getPlopTemplate = (name = "", jsx = false) => {
-  return `src/templates/${name}.${extension(jsx)}.hbs`
+  return `templates/${name}.${extension(jsx)}.hbs`
 }
 
 /**

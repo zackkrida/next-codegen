@@ -1,20 +1,35 @@
 #!/usr/bin/env node
-const {
-  promises: { readFile },
-} = require("fs")
 
-const go = async () => {
-  try {
-    const configData = await readFile(process.cwd() + "/.next-codegen.json", {
-      encoding: "utf-8",
-    })
-    const config = JSON.parse(configData)
+const args = process.argv.slice(2)
+const { Plop, run } = require("plop")
+const argv = require("minimist")(args)
+const { readFileSync, writeFileSync } = require("fs")
 
-    console.info("next-codegen is using the following settings:")
-    console.info(config)
-  } catch (error) {
-    console.error("Unable to read your .next-codegen.json file. So sad!")
+if (argv.init) {
+  // Check if they already have a config file
+  if (!argv.force) {
+    try {
+      const configString = readFileSync(process.cwd() + "/next-codegen.json")
+      console.info(
+        "You already have a next-codegen.json file. If you really want to re-initialize, pass the --force flag."
+      )
+      process.exit()
+    } catch (error) {}
   }
+
+  console.info("Welcome to next-codegen!")
+  console.info("> This is where I'll prompt for options.")
+  writeFileSync(
+    process.cwd() + "/next-codegen.json",
+    JSON.stringify({ woah: true }, null, 2)
+  )
+  console.info("Created next-codegen.json! Run next-codegen to get started.")
+  process.exit()
 }
 
-go()
+Plop.launch(
+  {
+    configPath: __dirname + "/plopfile.js",
+  },
+  run
+)

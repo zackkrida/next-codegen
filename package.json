@@ -1,19 +1,20 @@
 {
   "name": "next-codegen",
-  "private": false,
-  "bin": "./src/cli.js",
   "version": "0.5.0",
-  "main": "index.js",
+  "bin": "./src/cli.js",
+  "main": "./src/cli.js",
   "author": "zackkrida",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.8.0"
   },
   "dependencies": {
-    "plop": "^2.6.0"
+    "plop": "^2.6.0",
+    "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0"
   },
   "scripts": {
-    "test:plop": "plop --dest example"
+    "postinstall": "patch-package"
   },
   "prettier": {
     "semi": false,

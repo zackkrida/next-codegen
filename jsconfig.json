@@ -9,6 +9,6 @@
     "declaration": true,
     "removeComments": false
   },
-  "files": ["src/plopfile.js"],
+  "files": ["src/"],
   "exclude": ["__tests__", "node_modules", "types"]
 }
