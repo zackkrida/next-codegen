@@ -1,10 +1,11 @@
 // Try to read our config
 const { readFileSync } = require("fs")
+const rootDir = process.env.INIT_CWD || process.cwd()
 
 let config = {}
 
 try {
-  const configString = readFileSync(process.cwd() + "/next-codegen.json", {
+  const configString = readFileSync(rootDir + "/next-codegen.json", {
     encoding: "utf-8",
   })
   config = JSON.parse(configString)
@@ -12,7 +13,7 @@ try {
   console.warn(
     "No local config file (next-codegen.json) found. Run `next-codegen init` to create one!"
   )
-  process.exit()
+  process.exit(0)
 }
 
 const {

@@ -34,19 +34,20 @@ index 1f901ec..3ca3dd6 100644
  module.exports = (function () {
  
 diff --git a/node_modules/plop/src/plop.js b/node_modules/plop/src/plop.js
-index 703b6b7..48de611 100755
+index 703b6b7..bcfca8e 100755
 --- a/node_modules/plop/src/plop.js
 +++ b/node_modules/plop/src/plop.js
-@@ -16,6 +16,8 @@ const out = require('./console-out');
+@@ -16,6 +16,9 @@ const out = require('./console-out');
  const {combineBypassData} = require('./bypass');
  const {getBypassAndGenerator, handleArgFlags} = require('./input-processing');
  
-+argv.dest = process.cwd()
++// INIT_CWD is for inside of yarn/npm scripts, otherwise process.cwd() is reliable
++argv.dest = process.env.INIT_CWD || process.cwd()
 +
  const Plop = new Liftoff({
  	name: 'plop',
  	extensions: interpret.jsVariants,
-@@ -48,7 +50,7 @@ function run(env) {
+@@ -48,7 +51,7 @@ function run(env) {
  	// hmmmm, couldn't identify a generator in the user's input
  	if (!generators.length) {
  		// no generators?! there's clearly something wrong here
@@ -55,7 +56,7 @@ index 703b6b7..48de611 100755
  		process.exit(1);
  	} else if (!generatorName && generators.length === 1) {
  		// only one generator in this plopfile... let's assume they
-@@ -60,7 +62,7 @@ function run(env) {
+@@ -60,7 +63,7 @@ function run(env) {
  		out.chooseOptionFromList(generators, plop.getWelcomeMessage())
  			.then(runGeneratorByName)
  			.catch((err) => {
@@ -64,7 +65,7 @@ index 703b6b7..48de611 100755
  			});
  	} else if (generatorNames.includes(generatorName)) {
  		// we have found the generator, run it!
-@@ -68,7 +70,7 @@ function run(env) {
+@@ -68,7 +71,7 @@ function run(env) {
  	} else {
  		// we just can't make sense of your input... sorry :-(
  		const fuzyGenName = (generatorName + ' ' + args.join(' ')).trim();
