@@ -4,7 +4,7 @@
 
 > Notice: This is in **active development** and does not work yet.
 
-Configurable code generation for [next.js](https://nextjs.org).
+Configurable code generation for [next.js](https://nextjs.org). Quickly create pages, api routes, components, and utility functions from the command line.
 
 ## Installation
 
