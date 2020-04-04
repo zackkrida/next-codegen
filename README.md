@@ -1,5 +1,7 @@
 ![next-codegen](./banner.png)
 
+[![npm version](https://badge.fury.io/js/next-codegen.svg)](https://badge.fury.io/js/next-codegen)
+
 > Notice: This is in **active development** and does not work yet.
 
 Configurable code generation for [next.js](https://nextjs.org).
