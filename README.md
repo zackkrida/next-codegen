@@ -1,6 +1,6 @@
-# next-codegen
+![next-codegen](./banner.png)
 
-> This is in **active development** and does not work yet.
+> Notice: This is in **active development** and does not work yet.
 
 Configurable code generation for [next.js](https://nextjs.org).
 
