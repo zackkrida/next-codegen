@@ -8,20 +8,34 @@ Configurable code generation for [next.js](https://nextjs.org). Quickly create p
 
 ## Installation
 
-It is reccommended to use `npx` and avoid installing entirely.
+It is reccommended to use `npx` and avoid installing entirely. This ensures you're always using the latest version.
 
 ```shell
-# or, installed globally
-npm i -g next-codegen # yarn add -g next-codegen
-
-# or, installed locally (alias with a package.json script "next-codegen" : "next-codegen")
-npm --save-dev next-codegen # yarn add -D next-codegen
+npx next-codegen
 ```
+
+If you insist on installing, maybe do so locally instead of globally:
+
+```shell
+$ npm --save-dev next-codegen # yarn add -D next-codegen
+```
+
+Either choice, you could also alias as a script in your `package.json`, like so:
+
+```json
+{
+  "scripts": {
+    "generate": "npx next-codegen"
+  }
+}
+```
+
+You would then use `yarn generate` or `npm run generate` to use the script.
 
 ## Getting Started
 
 ```shell
-npx next-codegen --init # next-codegen --init (if installed globally) or ./node_modules/.bin/next-codegen if installed locally
+$ npx next-codegen --init # next-codegen --init (if installed globally) or ./node_modules/.bin/next-codegen if installed locally
 ```
 
 The first time you run `next-codegen` you will be prompted to configure your application with `next-codegen --init`. This command will generate a local `next-codegen.json` file which holds all the settings for your project. You may edit this file yourself anytime! Be sure to check it into your project if you want others to share your settings, or add it to your `.gitignore` if you only want to use `next-codegen` locally. See below for all of the avaliable features.
