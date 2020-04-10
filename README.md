@@ -58,3 +58,7 @@ The first time you run `next-codegen` you will be prompted to configure your app
   "fileCasing": "pascalCase"
 }
 ```
+
+## Why not Plop.js
+
+[Plop](https://plopjs.com/) is a great code-generation tool that I would highly recommend. However, its [quite large](https://bundlephobia.com/result?p=plop@2.6.0) 1.2mb before gzipping,

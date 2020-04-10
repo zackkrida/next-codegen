@@ -38,18 +38,17 @@ const extension = (jsx = false) =>
  * Helper function to get js/ts templates
  * @param {*} name
  */
-const getPlopTemplate = (name = "", jsx = false) => {
-  return `templates/${name}.${extension(jsx)}.hbs`
-}
+const getPlopTemplate = (name = "", jsx = false) =>
+  `templates/${name}.${extension(jsx)}.hbs`
 
 /**
- * pageHelper
+ * Page Helper
  *
- * Configuration for generating Next.js pages
+ * Plop config for generating Next.js pages
  */
 const pageHelper = () => {
   const basePath = srcDirectory ? `src/pages/` : `pages/`
-  const filename = `{{${fileCasing} name}}`
+  const filename = `{{kebabCase name}}` // Url-based pages should always be kebab-case
   const path = `${basePath}/${filename}.${extension(true)}`
   const template = getPlopTemplate("page", true)
 
@@ -75,13 +74,13 @@ const pageHelper = () => {
 }
 
 /**
- * pageHelper
+ * API Helper
  *
- * Configuration for generating Next.js API routes
+ * Plop config for generating Next.js API routes
  */
 const apiHelper = () => {
   const basePath = srcDirectory ? `src/pages/api` : `pages/api`
-  const filename = `{{${fileCasing} name}}`
+  const filename = `{{kebabCase name}}` // Url-based pages should always be kebab-case
   const path = `${basePath}/${filename}.${extension(false)}`
   const template = getPlopTemplate("api")
 

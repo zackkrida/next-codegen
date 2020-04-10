@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-const args = process.argv.slice(2)
+// @ts-ignore
 const { Plop, run } = require("plop")
+const args = process.argv.slice(2)
 const argv = require("minimist")(args)
 const { readFileSync, writeFileSync } = require("fs")
 const inquirer = require("inquirer")

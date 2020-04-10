@@ -1,23 +1,28 @@
 {
   "name": "next-codegen",
   "version": "1.0.0-2",
-  "bin": "./src/cli.js",
-  "main": "./src/cli.js",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
   "author": "zackkrida",
   "license": "MIT",
-  "devDependencies": {
-    "eslint": "^6.8.0"
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
   "dependencies": {
-    "patch-package": "^6.2.2",
-    "plop": "^2.6.0",
-    "postinstall-postinstall": "^2.1.0"
+    "@types/change-case": "^2.3.1",
+    "change-case": "^4.1.1",
+    "prompts": "^2.3.2"
   },
-  "scripts": {
-    "postinstall": "patch-package"
+  "devDependencies": {
+    "@types/prompts": "^2.0.5",
+    "eslint": "^6.8.0",
+    "microbundle": "^0.11.0"
   },
   "prettier": {
     "semi": false,
-    "tabWidth": 2
+    "tabWidth": 2,
+    "arrowParens": "avoid"
   }
 }
