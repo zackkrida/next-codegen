@@ -1,40 +1,69 @@
-/**
- * Next Codegen
- */
-import config from "./config"
-import codegen from "./codegen"
+import { map, find, test } from "ramda"
+import { exists, prefixPath, write } from "./lib/file"
+import { pascalCase } from "./lib/string"
+import { noPageDirError, validPageDirs } from "./config"
+import { prompt } from "./lib/prompt"
+import * as getApiTemplates from "./templates/api"
+import * as getPageTemplates from "./templates/page"
 
-const log = console.info
-const messages = {
-  welcome: "> Welcome to next-codegen.",
+const getTemplate = ({
+  isAPI,
+  usesTS,
+  name,
+  isDynamic,
+  dataFetcher,
+}: {
+  isAPI: boolean
+  usesTS: boolean
+  name: string
+  isDynamic: boolean
+  dataFetcher: string | null
+}) => {
+  const choices = {
+    api: getApiTemplates[usesTS ? "TS" : "JS"],
+    page: getPageTemplates[usesTS ? "TS" : "JS"],
+  }
+
+  return choices[isAPI ? "api" : "page"]({ name, isDynamic, dataFetcher })
 }
 
-const generateConfig = async () => {
-  log(messages.welcome)
-  const response = await config.prompt()
-  try {
-    await config.write(response)
-    log(config.messages.success)
-  } catch (error) {
-    log(config.messages.fail)
+// ~~~~~~~~~~~~~~~~~~~~~~ APP TIME BABY ~~~~~~~~~~~~~~~~~~~~~~~~~
+const app = async () => {
+  const getLocal = prefixPath(process.cwd())
+  const publicDir = find(exists, map(getLocal, validPageDirs))
+  if (!publicDir) {
+    console.log(noPageDirError)
+    process.exit(1)
   }
+
+  // { type: 'page', name: 'about-is', dataFetcher: 'getStaticProps' }
+  const data = await prompt()
+
+  const usesTS = exists(getLocal("tsconfig.json"))
+  const isAPI = data.type === "api"
+  const extension = usesTS ? `ts${isAPI ? "" : "x"}` : "js"
+  const isDynamic = test(/\[\w*\]/, data.name) // Just checking for opening and closing bracket
+  const name = pascalCase(isDynamic ? data.name : data.name.split("/")[0])
+
+  const filePath = `${publicDir}/${isAPI ? "api/" : ""}${
+    data.name
+  }.${extension}`
+  const fileContents = getTemplate({
+    isAPI,
+    usesTS,
+    name,
+    isDynamic,
+    dataFetcher: data.dataFetcher,
+  })
+
+  try {
+    write({ path: filePath, data: fileContents })
+  } catch (error) {
+    if (error.code === "EEXIST") {
+      console.info("The file already exists.")
+    }
+  }
+
   process.exit()
 }
-
-const generateCode = async config => {
-  const response = await codegen.prompt(config)
-  log(response)
-}
-
-// This is the whole app :)
-;(async function run() {
-  try {
-    const userConfig = await config.get().then(JSON.parse)
-    await generateCode(userConfig)
-  } catch (error) {
-    if (error.code !== "ENOENT") {
-      console.error(error)
-    }
-    await generateConfig()
-  }
-})()
+app()

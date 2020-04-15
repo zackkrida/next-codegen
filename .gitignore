@@ -1,2 +1,6 @@
 node_modules
 .*_cache_*
+*-error.log
+.env
+.env.*
+!.env.example

@@ -1,4 +1,3 @@
 {
-  "typescript": false,
-  "srcDirectory": false
+  "typescript": true
 }
