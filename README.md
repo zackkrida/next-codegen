@@ -4,7 +4,13 @@
 
 Community-run code generation for [Next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
 
-**[demo gif will go here]**
+![next-codegen screenshot](./screenshot.png)
+
+## Features
+
+- Quickly scaffold page and api routes from the command line
+- Supports all Next.js features (dynamic routes, TypeScript, src directory, new data fetching methods, you name it!)
+- Super fast and tiny (don't even install if you don't want)
 
 Next-codegen aims to keep in sync with Next.js releases to ensure feature parity. This makes it a great way to keep up with api changes to Next.js. We also link to the wonderful [Next.js documentation](https://nextjs.org/docs/) as much as possible to provide additional help and context.
 
@@ -27,11 +33,14 @@ When you run `next-codegen` you'll be asked if you'd like to create a new page o
 All prompts can be added as commands and flags instead. Here are some examples:
 
 ```shell
-> next-codegen api auth/login/[user]
-> next-codegen page blog/[category]/[slug] --ssg
+> next-codegen page about-us
+> next-codegen api 'auth/login/[user]'
+> next-codegen page 'blog/[category]/[slug]' --ssg
 ```
 
 So, you can use `next-codegen api` for api routes, `next-codegen page` for pages, and use the `--ssg` (getStaticProps) or `--ssr` (getServerSideProps) flags to specify the data generation type for your page. Pretty neat!
+
+> **TIP**: Most terminals have special treatment for square brackets in arguments, so make sure you wrap any route names in quotes when using the `api` and `page` cli commands. **Don't** add quotes when using the prompts!
 
 ## Zero configuration required
 
@@ -60,6 +69,6 @@ I'd love it to! Create an issue or pr and I'll take a look. I'd love for next-co
 
 ### Who are you?
 
-I'm @zackkrida, a full-stack remote software engineer who uses Next.js in production every day. I wrote next-codegen for myself to make simple tasks easier, and figured it was worth sharing.
+I'm [@zackkrida](https://github.com/zackkrida), a full-stack remote software engineer who uses Next.js in production every day. I wrote next-codegen for myself to make simple tasks easier, and figured it was worth sharing.
 
 I'm always looking for **part-time and contract remote work**, so feel free to drop me a line at sayhi@zackkrida.com or on twitter [@zackkrida](https://twitter.com/zackkrida)

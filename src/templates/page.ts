@@ -31,6 +31,7 @@ const ${meta.name} = () => {
   return <div>${meta.name}</div>
 }
 ${meta.dataFetcher ? `\n${fetchersJS[meta.dataFetcher]}\n` : ""}
+${meta.isDynamic ? `${fetchersJS.getStaticPaths}\n` : ""}
 export default ${meta.name}
 
 `.trim()
