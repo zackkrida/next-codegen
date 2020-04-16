@@ -4,7 +4,7 @@
 
 Community-run code generation for [Next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
 
-![next-codegen screenshot](./screenshot.png)
+![next-codegen demo](./demo.gif)
 
 ## Features
 
