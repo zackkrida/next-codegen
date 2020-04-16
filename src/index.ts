@@ -4,6 +4,10 @@ import { noPageDirError, validPageDirs } from "./config"
 import { prompt } from "./lib/prompt"
 import { getTemplate } from "./lib/getTemplate"
 
+import updateNotifier from "update-notifier"
+const pkg = require("../package.json")
+const notifier = updateNotifier({ pkg })
+
 const app = async () => {
   const local = prefixPath(process.cwd())
   const pagesDir = validPageDirs.map(local).find(exists)
@@ -44,12 +48,13 @@ const app = async () => {
       "\x1b[0m",
       `Created ${filePath.replace(process.cwd(), "")}`
     )
+    process.exit()
   } catch (error) {
     if (error.code === "EEXIST") {
       console.info("The file already exists.")
     }
+  } finally {
+    notifier.notify()
   }
-
-  process.exit()
 }
 app()

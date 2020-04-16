@@ -10,27 +10,7 @@ Next-codegen aims to keep in sync with Next.js releases to ensure feature parity
 
 ## Installation
 
-It is reccommended to use `npx` and avoid installing entirely. This ensures you're always using the latest version. If you find this to be too slow (due to poor network connectivity) you should install it.
-
-```shell
-npx next-codegen
-```
-
-If you're installing, maybe do so locally per Next.js project instead of globally:
-
-```shell
-$ npm --save-dev next-codegen # yarn add -D next-codegen
-```
-
-Whichever way you install, we reccommend you add next-codegen as a script in your `package.json` file, like so:
-
-```json
-{
-  "scripts": {
-    "generate": "npx next-codegen" // "generate": "next-codegen" if installed.
-  }
-}
-```
+Next-codegen can be used via npx or installed globally.
 
 You can then use `yarn generate` or `npm run generate` to use next-codegen.
 

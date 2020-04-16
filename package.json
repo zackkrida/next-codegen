@@ -2,18 +2,20 @@
   "name": "next-codegen",
   "version": "1.0.0-4",
   "source": "src/index.ts",
-  "main": "dist/index/umd.js",
-  "bin": "dist/index/umd.js",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
   "author": "zackkrida",
   "license": "MIT",
   "scripts": {
     "build": "ncc build src/index.ts -o dist -m",
-    "dev": "ncc run src/index.ts"
+    "dev": "ncc run src/index.ts",
+    "prepublish": "ncc run src/index.ts"
   },
   "dependencies": {
     "fs-extra": "^9.0.0",
     "minimist": "^1.2.5",
-    "prompts": "^2.3.2"
+    "prompts": "^2.3.2",
+    "update-notifier": "^4.1.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
