@@ -1,14 +1,8 @@
 {
   "compilerOptions": {
-    "strict": false,
-    "sourceMap": false,
-    "target": "es6",
+    "target": "es2015",
     "moduleResolution": "node",
-    "alwaysStrict": true,
-    "strictNullChecks": false,
-    "declaration": true,
-    "removeComments": false
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**.*", "src/lib/stringFormatters.ts"],
-  "exclude": ["__tests__", "node_modules", "types"]
+  "include": ["src/"]
 }

@@ -1,5 +1,3 @@
-import { trim } from "ramda"
-
 const printList = arr => arr.reduce((acc, i) => acc + `\n${i}`, "")
 
 const getNextTSImports = ({ isDynamic, dataFetcher }) => {
@@ -13,7 +11,7 @@ const getNextTSImports = ({ isDynamic, dataFetcher }) => {
 }
 
 export const TS = meta =>
-  trim(`
+  `
 ${printList([`import React from 'react'`, getNextTSImports(meta)])}
 
 const ${meta.name}: NextPage<${meta.name}Props> = () => {
@@ -24,10 +22,10 @@ type ${meta.name}Props = {}
 ${meta.dataFetcher ? `\n${fetchersTS[meta.dataFetcher]}\n` : ""}
 ${meta.isDynamic ? `${fetchersTS.getStaticPaths}\n` : ""}
 export default ${meta.name}
-`)
+`.trim()
 
 export const JS = meta =>
-  trim(`
+  `
 
 const ${meta.name} = () => {
   return <div>${meta.name}</div>
@@ -35,30 +33,30 @@ const ${meta.name} = () => {
 ${meta.dataFetcher ? `\n${fetchersJS[meta.dataFetcher]}\n` : ""}
 export default ${meta.name}
 
-`)
+`.trim()
 
 const fetchersTS = {
-  getStaticProps: trim(`
+  getStaticProps: `
 export const getStaticProps: GetStaticProps = async context => {
   return {
     props: {}
   }
-}`),
-  getStaticPaths: trim(`
+}`.trim(),
+  getStaticPaths: `
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: false
   }
 }
-`),
-  getServerSideProps: trim(`
+`.trim(),
+  getServerSideProps: `
 export const getServerSideProps: GetServerSideProps = async context => {
   return {
     props: {}
   }
 }
-`),
+`.trim(),
 }
 
 const nextTSImports = {
@@ -68,26 +66,26 @@ const nextTSImports = {
 }
 
 const fetchersJS = {
-  getStaticProps: trim(`
+  getStaticProps: `
 export async function getStaticProps(context) {
   return {
     props: {}
   }
 }
-`),
-  getStaticPaths: trim(`
+`.trim(),
+  getStaticPaths: `
 export async function getStaticPaths() {
   return {
     paths: [],
     fallback: false
   }
 }
-`),
-  getServerSideProps: trim(`
+`.trim(),
+  getServerSideProps: `
 export async function getServerSideProps(context) {
   return {
     props: {}, // will be passed to the page component as props
   }
 }
-`),
+`.trim(),
 }

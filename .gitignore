@@ -4,3 +4,6 @@ node_modules
 .env
 .env.*
 !.env.example
+
+pages/
+src/pages

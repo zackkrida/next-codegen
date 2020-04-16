@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/next-codegen.svg)](https://badge.fury.io/js/next-codegen)
 
-Zero-config code generation for [next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
+Zero-config code generation for [Next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
 
 **[demo gif here]**
 
@@ -10,29 +10,29 @@ Next-codegen aims to keep in sync with Next.js releases to ensure feature parity
 
 ## Installation
 
-It is reccommended to use `npx` and avoid installing entirely. This ensures you're always using the latest version.
+It is reccommended to use `npx` and avoid installing entirely. This ensures you're always using the latest version. If you find this to be too slow (due to poor network connectivity) you should install it.
 
 ```shell
-npx next-codegen # next-codegen@next for the latest prerelease version
+npx next-codegen
 ```
 
-If you insist on installing, maybe do so locally instead of globally:
+If you're installing, maybe do so locally per Next.js project instead of globally:
 
 ```shell
 $ npm --save-dev next-codegen # yarn add -D next-codegen
 ```
 
-Either choice, you could also alias as a script in your `package.json`, like so:
+Whichever way you install, we reccommend you add next-codegen as a script in your `package.json` file, like so:
 
 ```json
 {
   "scripts": {
-    "generate": "npx next-codegen" // Or simply "generate": "next-codegen" if installed.
+    "generate": "npx next-codegen" // "generate": "next-codegen" if installed.
   }
 }
 ```
 
-You would then use `yarn generate` or `npm run generate` to use the script.
+You can then use `yarn generate` or `npm run generate` to use next-codegen.
 
 ## Usage
 

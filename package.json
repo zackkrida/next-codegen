@@ -2,28 +2,25 @@
   "name": "next-codegen",
   "version": "1.0.0-3",
   "source": "src/index.ts",
-  "main": "dist/index.js",
-  "bin": "dist/index.js",
+  "main": "dist/index/umd.js",
+  "bin": "dist/index/umd.js",
   "author": "zackkrida",
   "license": "MIT",
   "scripts": {
-    "build": "microbundle",
-    "dev": "microbundle watch"
+    "build": "ncc build src/index.ts -o dist -m",
+    "dev": "ncc run src/index.ts"
   },
   "dependencies": {
-    "@types/change-case": "^2.3.1",
-    "change-case": "^4.1.1",
-    "data.task": "^3.1.2",
     "fs-extra": "^9.0.0",
-    "prompts": "^2.3.2",
-    "ramda": "^0.27.0"
+    "minimist": "^1.2.5",
+    "prompts": "^2.3.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
+    "@types/minimist": "^1.2.0",
     "@types/prompts": "^2.0.5",
-    "@types/ramda": "^0.27.3",
-    "eslint": "^6.8.0",
-    "microbundle": "^0.11.0"
+    "@zeit/ncc": "^0.22.1",
+    "eslint": "^6.8.0"
   },
   "prettier": {
     "semi": false,
