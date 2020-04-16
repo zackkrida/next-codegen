@@ -1,6 +1,6 @@
 {
   "name": "next-codegen",
-  "version": "1.0.0-3",
+  "version": "1.0.0-4",
   "source": "src/index.ts",
   "main": "dist/index/umd.js",
   "bin": "dist/index/umd.js",
