@@ -1,11 +1,12 @@
+// prettier-ignore
 export const TS = meta =>
   `
 import { NextApiRequest, NextApiResponse } from 'next'
 
-type ${meta.name}Data = {}
+type ${meta.name}Data = {${meta.isDynamic ? ` ${meta.name.toLowerCase()} ` : ``}}
 
 export default (req: NextApiRequest, res: NextApiResponse<${meta.name}Data>) => {
-  res.status(200).json({})
+  ${meta.isDynamic ? `  const { query: { ${meta.name.toLowerCase()} } } = req` : ''}  res.status(200).json({${meta.isDynamic ? ` ${meta.name.toLowerCase()} ` : ``}})
 }
 `.trim()
 

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { exists, prefixPath, write } from "./lib/file"
 import { pascalCase } from "./lib/string"
 import { noPageDirError, validPageDirs } from "./config"

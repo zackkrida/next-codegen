@@ -11,13 +11,8 @@ export const exists = path => {
 
 export const prefixPath = dir => path => `${dir}/${path}`
 
-export const write = ({ path, data }) => {
-  try {
-    outputFileSync(path, data, { flag: "wx+" })
-  } catch (error) {
-    console.error(error.message)
-  }
-}
+export const write = ({ path, data }) =>
+  outputFileSync(path, data, { flag: "wx+" })
 
 export const read = path => {
   try {
