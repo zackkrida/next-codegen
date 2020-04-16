@@ -4,21 +4,34 @@
 
 Zero-config code generation for [Next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
 
-**[demo gif here]**
+**[demo gif will go here]**
 
 Next-codegen aims to keep in sync with Next.js releases to ensure feature parity. This makes it a great way to keep up with api changes to Next.js. We also link to the wonderful [Next.js documentation](https://nextjs.org/docs/) as much as possible to provide additional help and context.
 
 ## Installation
 
-Next-codegen can be used via npx or installed globally.
+Next-codegen can be used via npx or installed globally. You can install it locally too, whatever works for you.
+
+```shell
+> npx next-codegen
+> yarn add -g next-codegen
+> npm i -g next-codegen
+```
 
 You can then use `yarn generate` or `npm run generate` to use next-codegen.
 
 ## Usage
 
-When you run next-codegen you'll be asked if you'd like to create a new page or a new api route.
+When you run next-codegen you'll be asked if you'd like to create a new page or a new api route. Then you'll be asked to name the route. If you're creating a page route, you'll be asked what type of data fetching you'd like to use.
 
-**[Needs More Info]**
+All prompts can be added as commands and flags instead. Here are some examples:
+
+```shell
+> next-codegen api auth/login/[user]
+> next-codegen page blog/[category]/[slug] --ssg
+```
+
+So, you can use `next-codegen api` for api routes, `next-codegen page` for pages, and use the `--ssg` (getStaticProps) or `--ssr` (getServerSideProps) flags
 
 ## Zero configuration required
 
