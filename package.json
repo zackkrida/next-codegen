@@ -5,6 +5,10 @@
   "main": "dist/index.js",
   "bin": "dist/index.js",
   "author": "zackkrida",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zackkrida/next-codegen"
+  },
   "license": "MIT",
   "scripts": {
     "build": "ncc build src/index.ts -o dist -m",

@@ -26,7 +26,6 @@ export default ${meta.name}
 
 export const JS = meta =>
   `
-
 const ${meta.name} = () => {
   return <div>${meta.name}</div>
 }

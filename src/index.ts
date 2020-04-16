@@ -47,7 +47,7 @@ const app = async () => {
       "\x1b[32m",
       "Success!",
       "\x1b[0m",
-      `Created ${filePath.replace(process.cwd(), "")}`
+      `Created ${filePath.replace(`${process.cwd()}/`, "")}`
     )
     process.exit()
   } catch (error) {

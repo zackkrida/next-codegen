@@ -1,0 +1,8 @@
+node_modules
+src
+pages
+banner.png
+demo.gif
+screenshot.png
+tsconfig.json
+yarn.lock
