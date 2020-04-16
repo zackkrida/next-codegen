@@ -13,7 +13,7 @@
   "scripts": {
     "build": "ncc build src/index.ts -o dist -m",
     "dev": "ncc run src/index.ts",
-    "prepublish": "ncc run src/index.ts"
+    "prepublish": "ncc build src/index.ts -o dist -m"
   },
   "dependencies": {
     "fs-extra": "^9.0.0",
