@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/next-codegen.svg)](https://badge.fury.io/js/next-codegen)
 
-Zero-config code generation for [Next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
+Community-run code generation for [Next.js](https://nextjs.org). Quickly create pages and api routes from the command line.
 
 **[demo gif will go here]**
 
