@@ -20,7 +20,7 @@ Next-codegen can be used via npx or installed globally. You can install it local
 
 ```shell
 > npx next-codegen
-> yarn add -g next-codegen
+> yarn global add next-codegen
 > npm i -g next-codegen
 ```
 
